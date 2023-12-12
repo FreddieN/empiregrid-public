@@ -7,7 +7,7 @@ EmpireGrid is a turn-based strategy multiplayer game, set in a world where playe
 Once in game, you may prefer to use the keyboard controls that are available.
 
 There are some jslint problems but fixing them I found bought too many bugs into the code.
-launch.json
+# launch.json
 ```
 {
     // Use IntelliSense to learn about possible attributes.
