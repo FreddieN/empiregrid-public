@@ -8,7 +8,7 @@ Once in game, you may prefer to use the keyboard controls that are available.
 
 There are some jslint problems but fixing them I found bought too many bugs into the code.
 launch.json
-'''
+```
 {
     // Use IntelliSense to learn about possible attributes.
     // Hover to view descriptions of existing attributes.
@@ -50,4 +50,4 @@ launch.json
     ]
 }
 
-'''
+```
