@@ -308,9 +308,6 @@ window.hideBuildMenu = function (structure) {
     if(document.getElementById('build-menu')) {
         document.getElementById('build-menu').remove()
     }
-    if(document.getElementById('popover')) {
-        hidePopover()
-    }
 }
 
 window.renderPlayerInfoPanel = function () {
@@ -429,9 +426,6 @@ window.showContextMenu = function () {
 window.hideContextMenu = function (structure) {
     if(document.getElementById('context-menu')) {
         document.getElementById('context-menu').remove()
-    }
-    if(document.getElementById('popover')) {
-        hidePopover()
     }
 }
 
