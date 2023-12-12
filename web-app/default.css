@@ -1,0 +1,129 @@
+/* body {
+    background-image: url('assets/Screenshot 2023-06-11 at 17.27.40.png');
+    background-size: 300px;
+} */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin:0;
+    background: radial-gradient(#797979, #424242);
+}
+td:hover {
+    opacity: 60%;
+    cursor: pointer;
+}
+/* cite Freddie Nicholson 2020 - https://fr3ddie.me/media/egg.html */
+.levelIndicator {
+    font-size: 10pt;
+    background-color: #fff;
+    padding: 2.5px 10px;
+    border-radius: 20px;
+    z-index: 999;
+    display: block;
+    position: relative;
+    left:0;
+    top: -40px;
+    text-align: center;
+}
+.subtleShadow {
+    -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
+    -moz-box-shadow: rgba(0,0,0,0.3) 0 1px 3px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
+}
+.dropdown {
+    text-align: center;
+    padding:4px;
+    border-radius:20px;
+    background-color: #fff;
+}
+.dropdown td {
+    padding: 10%;
+    min-width: 15vw;
+}
+.dropdown tr:not(:last-child) td {
+    border-bottom: 1px solid #ccc;
+}
+.navbar {
+    background-color: #eee;
+    margin:0;
+    height:50px;
+    display: flex;
+    align-items: center;
+    padding: 5px 20px;
+}
+.title-navbar {
+    padding-left:10px;
+    margin-right: 20px;
+}
+.player-navbar-indicator {
+    padding:0 20px;
+    font-weight: bold;
+}
+.player-navbar-indicator:hover {
+    cursor: pointer;
+}
+.info-popover {
+    background-color: #eee;
+
+    border-radius: 20px;
+    padding: 1% 2%;
+    margin: 1%;
+
+}
+#navbar-players {
+    display:flex;
+}
+#currentPlayer {
+    position: fixed;
+    top: 70px;
+    right: 10px;
+    z-index:999;
+}
+.player-grid-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:90vh;
+}
+.player-grid {
+    background-color: rgba(110, 119, 8, 0.10);
+    width:60vh;
+    padding: 4vh;
+    border-radius:20px;
+}
+.player-grid-tile img {
+    height: 20vh;
+}
+#nextturn {
+    background-color: #00A1FF;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 5%;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 7.5%;
+    cursor:pointer;
+}
+#next-turn img {
+    filter: invert(1);
+    padding-left:20px;
+    height:4vw;
+}
+.selected-board {
+    /* position: fixed;
+    color:#fff;
+    opacity:0.8;
+    bottom:1%;
+    left:1%;
+    font-size:80pt;
+    z-index:-1; */
+    background-color: white;
+    padding:2%;
+    border-radius: 10px;
+}
+.dropdown {
+    position: fixed;
+    z-index:100;
+    top: 10vh;
+    left:1vw;
+}

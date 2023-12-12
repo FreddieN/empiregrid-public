@@ -1,0 +1,130 @@
+<!-- In HTML Comments are written like this -->
+<!-- They can all be removed for your apps -->
+<!doctype html> <!-- This first line tells browsers to expect modern standard html 5 -->
+<html lang="en-gb"> <!-- This is indicates the page is written in British English, useful for accessibility -->
+    <head>
+        <meta charset="utf-8"> <!-- This indicates how the file is encoded. utf-8 is standard -->
+        <title>EmpireGrid</title> <!-- All pages need a title, this will be displayed in the browser's title bar -->
+        <link rel="stylesheet" href="default.css"> <!-- Import style sheet – default.css -->
+        <link rel="stylesheet" href="intro.css"> <!-- Import style sheet – default.css -->
+        <link rel="icon" href="./assets/favicon.png"> <!-- Import 'Favorites Icon' – favicon.png -->
+        <script type="module" src="main.js"></script> <!-- Load the main script. Must be type="module". Have only one of these -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="apple-touch-icon" sizes="57x57" href="./assets/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="./assets//apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="./assets//apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="./assets//apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="./assets//apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="./assets//apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="./assets//apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="./assets//apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="./assets//apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="./assets//android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./assets//favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="./assets//favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./assets//favicon-16x16.png">
+        <link rel="manifest" href="./assets//manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="./assets//ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+    </head>
+    <body>
+        <div id="navbar" class="navbar" style="display:none;">
+            <img height="40" src="assets/logo.png" alt="EmpireGrid Logo">
+            <h2 class="title-navbar">EmpireGrid</h2>
+            <div id="navbar-players">
+
+            </div>
+        </div>
+        <div class="intro-container" id="intro-container">
+            <div id="standard-intro-box" class="intro-box" >
+                <img id="intro-box-logo" class="intro-box-logo" src="assets/logo.png" alt="Empire Grid Logo"><br>
+                <h1 id="intro-box-title">EmpireGrid</h1>
+                <small id="intro-box-small">By Freddie Nicholson</small>
+                <p id="intro-box-text" class="intro-box-text">Press next to continue</p>
+                <img alt="next-button" onclick="nextSlide()" class="next-arrow-intro" height="7.5%" src="assets/arrow-alt-circle-right.svg">
+            </div>
+            <div id="how-many-players-intro-box" class="intro-box" style="display:none;">
+                <img class="intro-box-logo" src="assets/logo.png"><br>
+                <h1>How many players?</h1>
+                <br>
+                <div><div class="player-buttons">
+                    <div class="player-button" onclick="selectPlayerNo(2)">
+                    <h1>2</h1>
+                    <span>Players</span>
+                    </div>
+                    <div class="player-button" onclick="selectPlayerNo(3)">
+                    <h1>3</h1>
+                    <span>Players</span>
+                    </div>
+                    <div class="player-button" onclick="selectPlayerNo(4)">
+                    <h1>4</h1>
+                    <span>Players</span>
+                    </div>
+                </div>
+               <br>
+                <p class="intro-box-text">Please select the number of players you wish to play</p>
+            </div>
+            
+        </div>
+        <div id="player-names-intro-box" class="intro-box" style="display:none;">
+            <h1>Enter Player Names</h1>
+            <div id="player-name-input-boxes">
+           
+            </div>
+        <p class="intro-box-text">Please enter each players name</p>
+        <img onclick="playerSetup()" class="next-arrow-intro" height="7.5%" src="assets/arrow-alt-circle-right.svg">
+        </div>
+        </div>
+
+        <!-- Popover -->
+        <div id="popover" class="subtleShadow info-popover" style="width: 20%; display:none;">
+            <span>This is an informational popover.</span>
+        </div>
+
+        <!-- Current Player -->
+        <div id="currentPlayer" class="subtleShadow info-popover" style="width: 20%; display:none;">
+            <h2><span id="playernumbernameindicator">P1: Freddie<span></h2>
+            <p>🧍 Population: <span id="playerpopulationindicator">1</span></p>
+            <p>💎 Diamonds: <span id="playerdiamondindicator">50</span></p>
+            <p>🤼‍♂️ Military: <span id="playermilitaryindicator">0</span></p>
+            <p id="playerturnindicator">Turn 1</p>
+            <button id="nextturn" onclick="nextTurn()">Next Turn</button>
+        </div>
+
+        <!-- Game Board -->
+        <div style="display:none;" id="player-grid-container" class="player-grid-container">
+            <!-- Selected Player Board -->
+            <h3 id="selected-board" class="selected-board" style="display:none;">Freddie</h3>
+
+            <div class="player-grid" id="player-grid">
+                <table>
+                    <tr>
+                        <td class="player-grid-tile"><img src="assets/grass.png">
+                            <span class="levelIndicator subtleShadow"><small>Grasslands</small> <br>🏅 8 🧍 20</span>
+    
+                        </td>
+                        <td class="player-grid-tile"><img src="assets/grass.png"></td>
+                        <td class="player-grid-tile"><img src="assets/grass.png"></td>
+                    </tr>
+                    <tr>
+                    <!-- <td style="text-align:center;"><span class="levelIndicator subtleShadow">🏅 8 🧍 20</span>                    </td> -->
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="player-grid-tile"><img src="assets/grass.png"></td>
+                        <td class="player-grid-tile"><img src="assets/mining.png"></td>
+                        <td class="player-grid-tile"><img src="assets/grass.png"></td>
+                    </tr>
+                    <tr>
+                        <td class="player-grid-tile"><img src="assets/destroyed.png"></td>
+                        <td class="player-grid-tile"><img src="assets/grass.png"></td>
+                        <td class="player-grid-tile"><img src="assets/research.png"></td>
+                    </tr>
+                </table>
+            </div>
+         </div>
+
+    </body>
+</html>
